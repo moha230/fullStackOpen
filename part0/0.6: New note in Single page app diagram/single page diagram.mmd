@@ -1,0 +1,33 @@
+sequenceDiagram
+  participant user as user
+  participant browser as browser
+  participant server as server
+
+
+  
+  %% intial page load
+  user ->> browser: Opens SPA URL
+  browser ->>+ server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+  server -->>- browser: HTML document
+
+  %%Load CSS and JS
+  browser ->>+ server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+  server -->>- browser: the css file
+
+  browser ->>+ server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+  server -->>- browser: the JavaScript file
+
+  Note right of browser: The browser parses and executes spa.js code
+  
+  %% Fetch intial notes 
+  browser ->>+ server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+  server -->>- browser: [{"content": "who is there", "date": "2025-09-16T20:57:54.325Z"}, ... ]
+  
+  Note right of browser: Javascript renders notes dynamically in DOM
+  
+   %%User adds a new note
+  user ->> browser : Types a new note and clicks "Save"
+  browser ->>+ server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa 
+  server -->>- browser: JSON [{"content": "lachi dong","date": "2025-09-17T05:12:48.503Z"}] Updated note object
+  
+ Note right of browser: JavaScript updates the displayed notes without reloading the page
