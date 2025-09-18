@@ -8,3 +8,10 @@ It offers a limited set of choices that are available in the current state of co
 her server and the broweser communicate with each other using HTTP protocal 
 
 command - R to refresh the page 
+
+
+# part1
+
+## Introduction to React
+
+The react library easy way to start is by using the tool called vite 
