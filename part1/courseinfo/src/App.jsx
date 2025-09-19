@@ -19,7 +19,7 @@ const App = () => {
   );
 };
 
-//Define Header component and introduce props with the variable name course
+//Define Header component and introduce props with the property name course
 //The component receives the props (properties) from its parent App component
 // and uses the props.course to display the course name.
 
@@ -31,7 +31,7 @@ const Header = (props) => {
   );
 };
 
-//Define Content component and should introduce a variable part1,2,3 and exercises1,2,3
+//Define Content component and should introduce a property name part1,2,3 and exercises1,2,3
 //The component will receive the props properties from its parent App component
 
 const Content = (props) => {
@@ -50,7 +50,7 @@ const Content = (props) => {
   );
 };
 
-// Define Total component
+// Define Total component give it a property name total
 
 const Total = (props) => {
   return (
