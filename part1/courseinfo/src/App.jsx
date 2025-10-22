@@ -24,6 +24,7 @@ const App = () => {
     <div>
       <Header course={course} />
       <Content course={course}/>
+      <Total course={course} />
     </div>
   );
 };
@@ -45,5 +46,11 @@ const Content = (props) => {
 }
 
 //create a component for Total
+
+const Total = (props) => {
+return (<div>
+  <p>Total number of courses {props.course.parts[0].exercises + props.course.parts[1].exercises + props.course.parts[2].exercises}</p>
+</div>)
+} 
 
 export default App;
