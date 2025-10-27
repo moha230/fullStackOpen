@@ -137,87 +137,51 @@ You can also add properties to an object on the fly by either using dot notation
 
 # Functions 
 
-const App = () => {
- 
-  const course = "Half Stack application development"; //header section
+Done 
 
-  //content data  //changing it into an object 
-  const part1 = {
-    name : "Fundamentals of React",
-    exercises: 10
-  }
+# Object methods and "this"
 
-   const part2 = {
-    name : "Using props to pass data",
-    exercises: 7
-  }
+version of react that contains react hooks 
 
-   const part3 = {
-    name : "State of a component",
-    exercises: 14
-  }
+what is react hooks :
 
-  
- 
+This are special functions in react that let function components hook into react features such as state , lifecycle , context without writing a class:
 
-  return (
-    <div>
-      <Header course={course} />
-      <Content part1={part1} exercises1={part1.exercises} />
-      <Content part2={part2} exercises2={part2.exercises} />
-      <Content part3={part3} exercises3={part3.exercises} />
-      <Total total={part1.exercises + part2.exercises + part3.exercises} />
-    </div>
-  );
-};
+`useState` -> manage state ( data that changes)
+`useEffect` -> handle side effects (fetch data, timers etc)
+`useConetex`-> access gloabl data via react context 
+`useRef` -> keep mutable values that dont triger re-ender
+`useMemo, useCallback` -> perfomance optimization
+`useReducer` -> manage complex static logic  
 
-//Define Header component and introduce props with the property name course
-//The component receives the props (properties) from its parent App component
-// and uses the props.course to display the course name.
+ # C: Component state, event handlers
 
-const Header = (props) => {
-  return (
-    <div>
-      <h1>{props.course}</h1>
-    </div>
-  );
-};
+ what is it `component`: reusable , independent piece of a UI that describes how a part of the interface should look and behave.
 
-//Define Content component and should introduce a property name part1,2,3 and exercises1,2,3
-//The component will receive the props properties from its parent App component
+ conceptually a component in react is a javascript function or class that returns JSX 
 
-const Content = (props) => {
-  return (
-    <>
-     <Parts name= {props.part1}  exercises={props.exercises1}/>
-     <Parts name= {props.part2}  exercises={props.exercises2}/>
-     <Parts name= {props.part3}  exercises={props.exercises3}/>
-    </>
-  );
-};
+ There are functional components which use react hooks.
 
-// Define a Parts component that helps in rendering the data in the Content component 
-const Parts = (props) => {
-  return (
-    <>
-   <p>{props.name} {props.exercises} </p> 
-    </>
-  )
-}
+ what is a `state `: in simple terms state is data that cane change over time in your component.
 
-// Define Total component give it a property name total
+ react uses this data to render what data in the screen . when the state changes react automatically renders the component to show the new data. 
 
-const Total = (props) => {
-  return (
-    <div>
-      <p> Number of exercises {props.total}</p>
-    </div>
-  );
-};
-
-export default App;
+ we can think of a state as a memory of the component its like a box that holds information for a specific component.
 
 
+ ### Component state:
+
+ Is the internal data that that belongs to that specifce component which determines how that component will behave or on what will be displayed.
 
 
+ ### Evenet hanlders 
 
+ This are functions that handle what happens after a user actions 
+
+ This are function that are triggered when a specific event happens in your react app when a user clicks a button. 
+
+
+ ### helper functions 
+
+ This are small reusable function that perfoms a specifice ask to help another piece of code. 
+ Think of it as assistant that takes care of a small details 
