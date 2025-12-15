@@ -1,33 +1,36 @@
-//create a Hello component
 
-const Hello = (props) => {
+//create a component that shows this data
+
+const Hello = ({name, age}) => {
+  //destructring the props object 
+  
   return (
     <div>
       <p>
-        Hello {props.name} I am {props.age} years old
+        Hello {name} your age is  {age}
       </p>
     </div>
-  );
-};
+  )
+}
+
+
+
 
 
 
 
 const App = () => {
-  //variable to store data
+  //variables of data 
   const name = "peter";
   const age = 10;
-
   return (
     <div>
       <h1>Greetings</h1>
-      {/*This is a child component and passing props in it */}
       <Hello name="Maya" age={26 + 10} />
-      <Hello name={name} age={age} />
+      <Hello name={name} age={age}/>
+      
     </div>
-  );
+  )
 };
-
-
 
 export default App;
