@@ -269,3 +269,8 @@ State updated in heap
 Component function re-runs
  ↓
 UI updates
+
+
+### Passing state - to child components
+
+done 

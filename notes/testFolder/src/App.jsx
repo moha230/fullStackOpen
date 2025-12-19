@@ -1,28 +1,45 @@
-import { useState } from "react"; // import the use State function
+import { useState } from "react";
+import "./App.css";
+
+// Display component
+const Display = ({ counter }) => {
+  return <div className="display">{counter}</div>;
+};
+
+// Button component
+const Button = ({ onClick, text, className }) => {
+  return (
+    <button className={`btn ${className}`} onClick={onClick}>
+      {text}
+    </button>
+  );
+};
 
 const App = () => {
   const [counter, setCounter] = useState(0);
 
-  // separting the event handlers in seprate functions
-
-  //increment function
-  const incrementByOne = () => setCounter(counter + 1);
-
-  //decrement function
-  const decrementByOne = () => setCounter(counter - 1);
-
-  //reset function
-
-  const resetCounter = () => setCounter(0);
   return (
-    <div>
-      <div>{counter}</div>
-      <hr />
-      <button onClick={incrementByOne}>plus</button>
-      <hr />
-      <button onClick={decrementByOne}>minus</button>
-      <hr />
-      <button onClick={resetCounter}>reset</button>
+    <div className="app">
+      <Display counter={counter} />
+
+      {/* Floating buttons */}
+      <Button
+        onClick={() => setCounter((c) => c + 1)}
+        text="plus"
+        className="float-one"
+      />
+
+      <Button
+        onClick={() => setCounter((c) => c - 1)}
+        text="minus"
+        className="float-two"
+      />
+
+      <Button
+        onClick={() => setCounter(0)}
+        text="reset"
+        className="float-three"
+      />
     </div>
   );
 };
