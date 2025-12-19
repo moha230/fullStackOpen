@@ -195,3 +195,77 @@ distrcutruin helps us extract value in an object or array into other variables i
 ### Page re-rendering
 
 is when the components update the user interface when data changes without reloading the entire page 
+react only renders a page or re renders a page when it detects that data changes . so when props / states couse re render. 
+
+
+### Statefull components 
+
+const [counter, setCounter] = useState(0) creates a statefull variable that reacts remberes and re-enders the UI when it changes 
+
+[ currentValue, updateFunction ] === [ counter, setCounter ]
+
+
+The square brackets are array distructuring in js 
+
+This 
+
+```js 
+const [ counter, setCounter ] = useState(0);
+```
+is the same as this 
+```js
+const state = useState(0);
+const counter = state[0];
+const setCounter = state[1];
+```
+
+* The counter represents the current state value 
+* which starts from zero this comes from reacts internal memory 
+* its job is to service re-renders 
+* each time react renders the component , it injects the latest value inside the counter value  
+
+##### setCounter
+
+* its a function 
+* store the new value 
+* triggers a re-render 
+
+### Event handling
+
+Event handling = registering a function that runs automaticaaly when an event occurs. 
+
+```vbnet
+Event source → Event → Handler function
+```
+What really happens in React
+<button onClick={() => setCounter(counter + 1)}>
+
+Step-by-step:
+
+React stores your function in memory
+
+Browser detects click
+
+Browser sends event to React
+
+React finds which component owns the event
+
+React calls your function
+
+setCounter updates state
+
+React re-renders component
+
+Your function is just a callback.
+
+Click
+ ↓
+Event handler
+ ↓
+setCounter()
+ ↓
+State updated in heap
+ ↓
+Component function re-runs
+ ↓
+UI updates

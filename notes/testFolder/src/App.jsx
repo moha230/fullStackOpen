@@ -1,22 +1,24 @@
+import {useState} from 'react';// import the use State function 
+
+const App = () => {
+  const [counter, setCounter] = useState(0)
 
 
+  setTimeout(
+    () => 
+    setCounter(counter - 1),1000
+)
 
+console.log('rendering...', counter)
 
-//helper function
-
-const App = (props) => {
- 
-  
   return (
-    <div>
-      {props.counter}
-    </div>
+    <div>{counter}</div>
   )
+
 }
 
-export default App
 
-
+export default App;
 
 
 
