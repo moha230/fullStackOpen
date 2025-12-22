@@ -274,3 +274,12 @@ UI updates
 ### Passing state - to child components
 
 done 
+
+
+# A more complex state, debugging React Apps 
+
+### complex state 
+
+we use the useState function to creeate a complex state which are separate peaices of state 
+
+complex state has structured data in it and does not have a single value . A complext state may contain objects arrays and nested data.
