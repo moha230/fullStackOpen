@@ -16,32 +16,21 @@ const Button = ({ onClick, text, className }) => {
 };
 
 const App = () => {
-  const [counter, setCounter] = useState(0);
+  const [left, setLeft] = useState(0)
+  const [right, setRight] = useState(0)
 
   return (
-    <div className="app">
-      <Display counter={counter} />
-
-      {/* Floating buttons */}
-      <Button
-        onClick={() => setCounter((c) => c + 1)}
-        text="plus"
-        className="float-one"
-      />
-
-      <Button
-        onClick={() => setCounter((c) => c - 1)}
-        text="minus"
-        className="float-two"
-      />
-
-      <Button
-        onClick={() => setCounter(0)}
-        text="reset"
-        className="float-three"
-      />
+    <div>
+      {left}
+      <button onClick={() => setLeft(left + 1)}>
+        left
+      </button>
+      <button onClick={() => setRight(right + 1)}>
+        right
+      </button>
+      {right}
     </div>
-  );
-};
+  )
+}
 
 export default App;
