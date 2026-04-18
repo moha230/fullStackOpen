@@ -137,6 +137,85 @@ You can also add properties to an object on the fly by either using dot notation
 
 # Functions 
 
+const App = () => {
+ 
+  const course = "Half Stack application development"; //header section
+
+  //content data  //changing it into an object 
+  const part1 = {
+    name : "Fundamentals of React",
+    exercises: 10
+  }
+
+   const part2 = {
+    name : "Using props to pass data",
+    exercises: 7
+  }
+
+   const part3 = {
+    name : "State of a component",
+    exercises: 14
+  }
+
+  
+ 
+
+  return (
+    <div>
+      <Header course={course} />
+      <Content part1={part1} exercises1={part1.exercises} />
+      <Content part2={part2} exercises2={part2.exercises} />
+      <Content part3={part3} exercises3={part3.exercises} />
+      <Total total={part1.exercises + part2.exercises + part3.exercises} />
+    </div>
+  );
+};
+
+//Define Header component and introduce props with the property name course
+//The component receives the props (properties) from its parent App component
+// and uses the props.course to display the course name.
+
+const Header = (props) => {
+  return (
+    <div>
+      <h1>{props.course}</h1>
+    </div>
+  );
+};
+
+//Define Content component and should introduce a property name part1,2,3 and exercises1,2,3
+//The component will receive the props properties from its parent App component
+
+const Content = (props) => {
+  return (
+    <>
+     <Parts name= {props.part1}  exercises={props.exercises1}/>
+     <Parts name= {props.part2}  exercises={props.exercises2}/>
+     <Parts name= {props.part3}  exercises={props.exercises3}/>
+    </>
+  );
+};
+
+// Define a Parts component that helps in rendering the data in the Content component 
+const Parts = (props) => {
+  return (
+    <>
+   <p>{props.name} {props.exercises} </p> 
+    </>
+  )
+}
+
+// Define Total component give it a property name total
+
+const Total = (props) => {
+  return (
+    <div>
+      <p> Number of exercises {props.total}</p>
+    </div>
+  );
+};
+
+export default App;
 
 
 
