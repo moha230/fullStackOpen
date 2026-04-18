@@ -1,10 +1,12 @@
 //Create Header component that takes in an argument named props
 //props is an object that contain all data passed into the component
 const Header = (props) => {
+
+
   return (
     /*JSX creating a div and h1 tag and insert js values inside JSX*/
     <div>
-      <h1>{props.course}</h1>
+      <h1>{props.course.name}</h1>
     </div>
   );
 };
@@ -21,6 +23,7 @@ const Part = (props) => {
 
 //Create a Content component that takes in an argument named props
 const Content = (props) => {
+  console.log(props)
   return (
     <div>
       <Part name={props.parts[0].name} exercises={props.parts[0].exercises} />
@@ -46,28 +49,29 @@ const Total = (props) => {
 };
 
 const App = () => {
-  //Make the variables into objects and place them into an array
-  const course = "Half Stack application development";
-  const parts = [
-    {
-      name: "Fundamentals of React",
-      exercises: 10,
-    },
-    {
-      name: "Using props to pass data",
-      exercises: 7,
-    },
-    {
-      name: "State of a component",
-      exercises: 14,
-    },
-  ];
+  const course = {
+    name: "Half Stack application development",
+    parts: [
+      {
+        name: "Fundamentals of React",
+        exercises: 10,
+      },
+      {
+        name: "Using props to pass data",
+        exercises: 7,
+      },
+      {
+        name: "State of a component",
+        exercises: 14,
+      },
+    ],
+  };
 
   return (
     <div>
       <Header course={course} />
-      <Content parts={parts} />
-      <Total total={parts} />
+      <Content parts={course.parts} />
+      <Total total={course.parts} />
     </div>
   );
 };
