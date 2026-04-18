@@ -14,22 +14,28 @@ const Header = (props) => {
   );
 };
 
+//create a Part component
+
+const Part = (props) => {
+  return (
+    <p>
+      {props.name} {props.exercises}
+    </p>
+  )
+}
+
 //Create a Content component that takes in an argument named props
 const Content = (props) => {
   return (
     <div>
-      <p>
-        {props.part1} {props.exercises1}
-      </p>
-       <p>
-        {props.part2} {props.exercises2}
-      </p>
-       <p>
-        {props.part3} {props.exercises3}
-      </p>
+     <Part name={props.part1} exercises={props.exercises1}/>
+     <Part name={props.part2} exercises={props.exercises2}/>
+     <Part name={props.part3} exercises={props.exercises3}/>
     </div>
   );
 };
+
+
 
 //Create a Total component that takes in an argument named props
 
