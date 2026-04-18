@@ -184,4 +184,14 @@ This are special functions in react that let function components hook into react
  ### helper functions 
 
  This are small reusable function that perfoms a specifice ask to help another piece of code. 
- Think of it as assistant that takes care of a small details 
+ Think of it as assistant that takes care of a small details.
+
+ ### destructuring 
+
+We can assigne the props of an object to the parameter of the child component and using distructruing 
+
+distrcutruin helps us extract value in an object or array into other variables in shorter cleaner way 
+
+### Page re-rendering
+
+is when the components update the user interface when data changes without reloading the entire page 
