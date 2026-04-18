@@ -1,27 +1,29 @@
 const App = () => {
   const course = "Half Stack application development"; //header section
 
-  //content data  //changing it into an object
-  const part1 = {
-    name: "Fundamentals of React",
-    exercises: 10,
-  };
+  //content data  //changing it into an object and lets place the object into an array removed const= part1 part2 and part3
+  const parts = [
+    {
+      name: "Fundamentals of React",
+      exercises: 10,
+    },
 
-  const part2 = {
-    name: "Using props to pass data",
-    exercises: 7,
-  };
+    {
+      name: "Using props to pass data",
+      exercises: 7,
+    },
 
-  const part3 = {
-    name: "State of a component",
-    exercises: 14,
-  };
+    {
+      name: "State of a component",
+      exercises: 14,
+    },
+  ];
 
   return (
     <div>
       <Header course={course} />
-      <Part part1={part1} part2={part2} part3={part3} />
-      <Total exercises1 = {part1} exercises2 = {part2} exercises3 = {part3}/>
+      <Content parts={parts} />
+      <Total parts= {parts} />
     </div>
   );
 };
@@ -38,28 +40,22 @@ const Header = (props) => {
   );
 };
 
-const Part = (props) => {
-  return (
-    <div>
-      <p>
-        {props.part1.name} {props.part1.exercises}
-      </p>
-      <p>
-        {props.part2.name} {props.part2.exercises}
-      </p>
-      <p>
-        {props.part3.name} {props.part3.exercises}
-      </p>
-    </div>
-  );
+//create a component for content
+
+const Content = (props) => {
+  return <div>
+    <p>{props.parts[0].name} {props.parts[0].exercises}</p>
+    <p>{props.parts[1].name} {props.parts[1].exercises}</p>
+    <p>{props.parts[2].name} {props.parts[2].exercises}</p>
+  </div>;
 };
 
+//create a component for Total 
 
 const Total = (props) => {
-return (
-  <div>
-    <p>The number of exercise {props.exercises1.exercises + props.exercises2.exercises + props.exercises3.exercises}</p>
-  </div>
-)
+  return (<div>
+    <p>Total number of exercises {props.parts[0].exercises + props.parts[1].exercises+props.parts[2].exercises}</p>
+  </div>)
 }
+
 export default App;
