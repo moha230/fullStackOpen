@@ -1,36 +1,40 @@
+// we import the user state function
+// This helps the react component have memory
+
 import { useState } from "react";
-import "./App.css";
 
-// Display component
-const Display = ({ counter }) => {
-  return <div className="display">{counter}</div>;
-};
-
-// Button component
-const Button = ({ onClick, text, className }) => {
-  return (
-    <button className={`btn ${className}`} onClick={onClick}>
-      {text}
-    </button>
-  );
-};
-
+//intialize app as our root component acts as container for the whole application
 const App = () => {
-  const [left, setLeft] = useState(0)
-  const [right, setRight] = useState(0)
+  //
+
+  const [counter, setCounter] = useState(0);
+
+  //function to add the number of plus
+  const plus = () => {
+    setCounter(counter + 1);
+  };
+
+  // function to reset the counter
+  const zero = () => {
+    setCounter(0);
+  };
+
+  //function to decrement 
+
+  const minus = () => {
+    setCounter(counter -1)
+  }
+
+  console.log("rendering...", counter);
 
   return (
     <div>
-      {left}
-      <button onClick={() => setLeft(left + 1)}>
-        left
-      </button>
-      <button onClick={() => setRight(right + 1)}>
-        right
-      </button>
-      {right}
+      <button onClick={zero}>zero</button>
+      <button onClick={plus}>Plus</button>
+      {counter}
+      <button onClick={minus}>minus</button>
     </div>
-  )
-}
+  );
+};
 
 export default App;
