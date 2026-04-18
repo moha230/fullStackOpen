@@ -1,7 +1,3 @@
-
-
-
-
 const App = () => {
   const course = "Half Stack application development"; //header section
   //content data
@@ -16,24 +12,21 @@ const App = () => {
     <div>
       <Header course={course} />
       <p>
-        {part1} {exercises1}
+      <Content  part1={part1} exercises1={exercises1}/>
       </p>
       <p>
-        {part2} {exercises2}
+      <Content  part2={part2} exercises2={exercises2}/>
       </p>
       <p>
-        {part3} {exercises3}
+       <Content  part3={part3} exercises3={exercises3}/>
       </p>
       <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
     </div>
   );
 };
 
-
-
-
 //Define Header component and introduce props with the variable name course
-//The component receives the props (properties) from its parent App component 
+//The component receives the props (properties) from its parent App component
 // and uses the props.course to display the course name.
 
 const Header = (props) => {
@@ -44,10 +37,17 @@ const Header = (props) => {
   );
 };
 
-//Define content component 
+//Define Content component and should introduce a variable part1,2,3 and exercises1,2,3
 //The component will receive the props properties from its parent App component
 
-
-
+const Content = (props) => {
+  return (
+    <>
+      <p>{props.part1} {props.exercises1}</p>
+      <p>{props.part2} {props.exercises2}</p>
+      <p>{props.part3} {props.exercises3}</p>
+    </>
+  );
+};
 
 export default App;
