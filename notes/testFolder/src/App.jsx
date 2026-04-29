@@ -1,8 +1,7 @@
 // component called Hello
 const Hello = (props) => {
-  // define variables for the props
-  const name = props.name;
-  const age = props.age;
+  // lets use destructuring becouse props is an object lets not forget that 
+ const {name , age} = props
 
   // helper function to calculate the year somone is born has been separated in its own function,
   // lets refactore the helper function by removing the const yearNow and props.name and return statement and curly brackets.
