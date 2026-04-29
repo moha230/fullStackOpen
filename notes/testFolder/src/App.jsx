@@ -19,16 +19,14 @@ const Hello = (props) => {
 };
 
 // main component ( entry point of the app)
-const App = () => {
-  //Variables inside the App component
-  const nimi = "juma";
-  const ika = 50;
+const App = (props) => {
+  
+  //destructuring the props object and creating a counter 
+  const {counter} = props 
 
   return (
     <div>
-      <h1>Greetings </h1>
-      {/* Passing variables as props */}
-      <Hello name={nimi} age={ika} />
+      {counter}
     </div>
   );
 };

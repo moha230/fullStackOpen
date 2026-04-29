@@ -1,320 +1,399 @@
-whats a context menu 
 
-its a pop up menu in a grahical user interface used for interaction 
-It offers a limited set of choices that are available in the current state of context of the operating system or application to which the menu belongs. 
+# whats a context menu
+
+its a pop-up menu in a graphical user interface used for interaction. It offers a limited set of choices that are available in the current state or context of the operating system or application to which the menu belongs.
+
+Examples:
+
+- right-click menu on desktop
+- copy/paste menu
+- browser context menu
+
+---
 
 # HTTP GET
 
-her server and the broweser communicate with each other using HTTP protocal 
+The server and the browser communicate with each other using the HTTP protocol.
 
-command - R to refresh the page 
+**HTTP GET** is a request used to fetch data or resources from a server.
 
+Example:
+
+```http
+GET /index.html
+````
+
+This asks the server to send the page.
+
+**Command + R** refreshes the page in the browser.
+
+---
 
 # part1
 
 ## Introduction to React
 
-The react library easy way to start is by using the tool called vite 
+The easiest way to start using the React library is with a tool called **Vite**.
 
+Vite helps create React projects quickly and gives a fast development server.
 
- # b JavaScript
+---
 
- transpiled what this 
+# b JavaScript
 
+## transpiled what this
 
- The word tanspiled comes from transformed and compiled 
+The word **transpiled** comes from **transformed** + **compiled**.
 
- Transpiling means converting code from ones source language to another similar level language not to machine code buut to another humand readbale language that a  computer can run. 
+Transpiling means converting code from one source language into another similar-level language.
 
+Not machine code, but another human-readable language that computers can run.
 
-  | Tool                 | From             | To             | Used For                             |
-| -------------------- | ---------------- | -------------- | ------------------------------------ |
-| **TypeScript (tsc)** | TypeScript       | JavaScript     | Add types & modern syntax            |
-| **Babel**            | Modern JS (ES6+) | Older JS (ES5) | Make new syntax work in old browsers |
-| **Sass/SCSS**        | Sass             | CSS            | Advanced CSS features                |
-| **TSX/JSX compiler** | JSX/TSX          | JS             | React components                     |
+Examples:
 
+| Tool               | From             | To             | Used For                             |
+| ------------------ | ---------------- | -------------- | ------------------------------------ |
+| TypeScript (tsc)   | TypeScript       | JavaScript     | Add types & modern syntax            |
+| Babel              | Modern JS (ES6+) | Older JS (ES5) | Make new syntax work in old browsers |
+| Sass/SCSS          | Sass             | CSS            | Advanced CSS features                |
+| JSX / TSX Compiler | JSX / TSX        | JavaScript     | React components                     |
 
-why transpile?
+## why transpile?
 
-# variables 
+* Browser compatibility
+* Use modern syntax
+* Add developer features like TypeScript
+* Convert JSX into normal JavaScript
+* Improve developer experience
 
-ways in which javascript defines variables 
+---
 
-One way is using const . But it does not define a variable but defines a constant which the value cant be changed 
+# variables
 
-```js 
+Ways JavaScript defines variables:
+
+```js
 const x = 1
-let y = 5 
-
-
+let y = 5
 ```
+
+## const
+
+`const` creates a variable whose reference cannot be reassigned.
+
+```js
+const x = 1
+x = 2 // error
+```
+
+## let
+
+`let` creates a variable whose value can change.
+
+```js
+let y = 5
+y = 10
+```
+
+---
 
 # arrays
 
-In arrays we can use const to define the array but the content of the array can be changed. 
+Arrays can be declared with `const`, but their contents can still change.
 
-Why did JavaScript do it this way?
-Consistency with objects
-Arrays are objects in JS. Objects have always been mutable by default. Making const freeze them would break tons of code.
-Separation of concerns
-const protects the name → object link (no accidental reassignment),
-but it deliberately does not change the object’s mutability policy.
-Performance & ergonomics
-Cloning arrays/objects on every change would be costly and noisy (const would become awkward to use).
-Everyday JS code often mutates arrays (push/pop/splice); keeping that behavior familiar mattered.
-Backwards compatibility
-ES6 introduced let/const into a huge ecosystem. Changing object/array mutability semantics would have been a breaking change.
+```js
+const arr = [1, 2, 3]
 
-## Array methods 
-
-### iterating 
-
-if you want to iterating through the array we use the foreach method
-
-```js 
-
-value => {
-  console.log(value)
-}
-
+arr.push(4)
+console.log(arr)
 ```
 
-### adding elements in an array 
+Because `const` protects the variable name, not the internal contents.
 
-we use the method push  
+---
 
-One characteristic of the functional programming paradigm is the use of immutable data structures
+## Array methods
 
-Functional programing treats data like facts once something happend or created you dont rewrite it again need to create new versions.
+### iterating
 
-In short:
-In functional programming, data is never changed.
-Instead, you create new versions when you need to update something.
-This keeps your programs predictable, safe, and easy to reason about.
+Use `forEach()`:
 
+```js
+const numbers = [1, 2, 3]
 
-`The word immutable` 
+numbers.forEach(value => {
+  console.log(value)
+})
+```
 
-prefix: im means not 
-root: mature means to change 
+### adding elements in an array
 
-So immutable means not changeable cannot be changed 
+Use `push()`:
 
+```js
+const arr = [1,2]
+arr.push(3)
+```
 
-so in react its preferable to use the method concat which creates a new array  with the added item . it ensure the original array is unchanged.
+In React prefer immutable updates with `concat()`:
 
 ```js
 const t = [1, -1, 3]
 
-const t2 = t.concat(5)  // creates new array
-
-console.log(t)  // [1, -1, 3] is printed
-console.log(t2) // [1, -1, 3, 5] is printed
-
+const t2 = t.concat(5)
 ```
 
-Other method inlcude map which can create a new array and can change something into a different value 
-So the map method is used a lot in react 
+---
 
-It can also be used to assigne to variables
+## immutable data
+
+**Immutable** means cannot be changed.
+
+In functional programming, data is not modified directly. New versions are created.
+
+Benefits:
+
+* predictable behavior
+* easier debugging
+* safer updates
+* works well with React
+
+---
+
+## map()
+
+`map()` creates a new array by transforming values.
 
 ```js
-const number = [10,20,30]
+const numbers = [1,2,3]
+
+const doubled = numbers.map(n => n * 2)
+```
+
+---
+
+## Array destructuring
+
+```js
+const numbers = [10,20,30]
 
 const [first, second, third, ...rest] = numbers
-
-console.log(first,second,third )
-
 ```
+
+---
 
 # Objects
 
-we define object by using Object literals and objects can store any values 
-
-we can refreence the object values by using dotnotation  or using square brackets. 
-You can also add properties to an object on the fly by either using dot notation or brackets:
-
-# Functions 
-
-Done 
-
-# Object methods and "this"
-
-version of react that contains react hooks 
-
-what is react hooks :
-
-This are special functions in react that let function components hook into react features such as state , lifecycle , context without writing a class:
-
-`useState` -> manage state ( data that changes)
-`useEffect` -> handle side effects (fetch data, timers etc)
-`useConetex`-> access gloabl data via react context 
-`useRef` -> keep mutable values that dont triger re-ender
-`useMemo, useCallback` -> perfomance optimization
-`useReducer` -> manage complex static logic  
-
- # C: Component state, event handlers
-
- what is it `component`: reusable , independent piece of a UI that describes how a part of the interface should look and behave.
-
- conceptually a component in react is a javascript function or class that returns JSX 
-
- There are functional components which use react hooks.
-
- what is a `state `: in simple terms state is data that cane change over time in your component.
-
- react uses this data to render what data in the screen . when the state changes react automatically renders the component to show the new data. 
-
- we can think of a state as a memory of the component its like a box that holds information for a specific component.
-
-
-  - Component state:
-
- Is the internal data that that belongs to that specifce component which determines how that component will behave or on what will be displayed.
-
-
- -  Evenet hanlders 
-
- This are functions that handle what happens after a user actions 
-
- This are function that are triggered when a specific event happens in your react app when a user clicks a button. 
-
-
- ## component helper function
-
-* This is a function defined inside another function some logic will be defined inside another function and called when the component is rendered.
-* Some logic are kept in small code or functions.
-
- ### destructuring 
-
-what is distructuring ? taking values out of arrays or objects and storing them in variables easily. 
-
-- object destructuring
-
-The code below does not use destructuring it uses dot notation to extract the value from the object. 
 ```js
 const person = {
   name: "Juma",
   age: 20
-};
-
-const name = person.name;
-const age = person.age;
+}
 ```
 
-lets see how using destructuring helps in removing values from an object 
+## dot notation
 
-```js 
+```js
+person.name
+```
 
+## bracket notation
+
+```js
+person["name"]
+```
+
+## add properties
+
+```js
+person.city = "Tampere"
+person["country"] = "Finland"
+```
+
+---
+
+# Functions
+
+```js
+const add = (a, b) => {
+  return a + b
+}
+```
+
+---
+
+# Object methods and "this"
+
+```js
 const person = {
-  name: "juma",
+  name: "Juma",
+  greet() {
+    console.log(this.name)
+  }
+}
+```
+
+`this` refers to the current object.
+
+---
+
+# version of react that contains react hooks
+
+## what is react hooks
+
+Hooks are special functions that let function components use React features.
+
+* `useState`
+* `useEffect`
+* `useContext`
+* `useRef`
+* `useMemo`
+* `useCallback`
+* `useReducer`
+
+---
+
+# C: Component state, event handlers
+
+## what is component
+
+A reusable independent piece of UI.
+
+Usually a JavaScript function returning JSX.
+
+---
+
+## what is state
+
+State is data that can change over time inside a component.
+
+When state changes, React re-renders.
+
+Think of state as memory.
+
+---
+
+## Event handlers
+
+Functions that run after user actions.
+
+```js
+<button onClick={handleClick}>Click</button>
+```
+
+---
+
+## component helper function
+
+A helper function is a small function used to organize logic.
+
+```js
+const App = () => {
+  const greet = () => "Hello"
+
+  return <p>{greet()}</p>
+}
+```
+
+---
+
+## destructuring
+
+Taking values out of arrays or objects into variables.
+
+### object destructuring
+
+```js
+const person = {
+  name: "Juma",
   age: 20
 }
 
-const {name, age} = person; 
-
+const { name, age } = person
 ```
 
-- Array destructuring
-
-insted of using dot notation we use bracket notation to extract the values in  an array 
+### Array destructuring
 
 ```js
-const numbers = [10, 20, 30];
+const numbers = [10,20,30]
 
-const [first, second, third] = numbers;
+const [first, second, third] = numbers
 ```
 
+---
 
-- auxiliary variables ?
+### auxiliary variables
 
-this are extra helper variables used to store temporary values or simplify calculations. 
+Temporary helper variables.
 
-### Page re-rendering
-
-is when the components update the user interface when data changes without reloading the entire page 
-react only renders a page or re renders a page when it detects that data changes . so when props / states couse re render. 
-
-
-### Statefull components 
-
-const [counter, setCounter] = useState(0) creates a statefull variable that reacts remberes and re-enders the UI when it changes 
-
-[ currentValue, updateFunction ] === [ counter, setCounter ]
-
-
-The square brackets are array distructuring in js 
-
-This 
-
-```js 
-const [ counter, setCounter ] = useState(0);
-```
-is the same as this 
 ```js
-const state = useState(0);
-const counter = state[0];
-const setCounter = state[1];
+const subtotal = price * quantity
+const total = subtotal + tax
 ```
 
-* The counter represents the current state value 
-* which starts from zero this comes from reacts internal memory 
-* its job is to service re-renders 
-* each time react renders the component , it injects the latest value inside the counter value  
+---
 
-##### setCounter
+### Rerendering the page
 
-* its a function 
-* store the new value 
-* triggers a re-render 
+So rendering is making or generating a 2d image or animation from a 3d model.
 
-### Event handling
+Rerendering is the process where a component updates its UI to reflect changes in state or props after the initial render.
 
-Event handling = registering a function that runs automaticaaly when an event occurs. 
+React updates UI when data changes.
 
-```vbnet
-Event source → Event → Handler function
+Triggered by:
+
+* state changes
+* props changes
+
+---
+
+### Stateful components
+
+```js
+const [counter, setCounter] = useState(0)
 ```
-What really happens in React
-<button onClick={() => setCounter(counter + 1)}>
 
-Step-by-step:
+* `counter` current value
+* `setCounter` update function
 
-React stores your function in memory
+Equivalent:
 
-Browser detects click
+```js
+const state = useState(0)
 
-Browser sends event to React
+const counter = state[0]
+const setCounter = state[1]
+```
 
-React finds which component owns the event
+---
 
-React calls your function
+### Event handling flow
 
-setCounter updates state
-
-React re-renders component
-
-Your function is just a callback.
-
+```text
 Click
- ↓
-Event handler
- ↓
+↓
+Handler runs
+↓
 setCounter()
- ↓
-State updated in heap
- ↓
-Component function re-runs
- ↓
+↓
+State updates
+↓
+Component re-runs
+↓
 UI updates
+```
 
+---
 
-### Passing state - to child components
+### Passing state to child components
 
-done 
+```js
+<App>
+  <Child count={counter} />
+</App>
+```
 
-
+---
 
 # D: A more complex state, debugging React apps
-
