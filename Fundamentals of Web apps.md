@@ -348,7 +348,7 @@ Triggered by:
 
 ---
 
-### Stateful components
+### Stateful components ( stoped her)
 
 ```js
 const [counter, setCounter] = useState(0)
