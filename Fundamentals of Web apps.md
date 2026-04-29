@@ -275,5 +275,10 @@ UI updates
 
 done 
 
+## component helper function
 
-# D A more complex state, debugging React apps
+* This is a function defined inside another function some logic will be defined inside another function and called when the component is rendered.
+*  
+
+# D: A more complex state, debugging React apps
+

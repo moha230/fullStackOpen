@@ -1,38 +1,31 @@
-// we import the user state function
-// This helps the react component have memory
 
-import { useState } from "react";
+// component function 
+const Hello = (props) => {
+  return (
+    <div>
+      <p>
+        Hello {props.name}, you are {props.age} years old 
+      </p>
+    </div>
+  )
+}
 
-//intialize app as our root component acts as container for the whole application
+
+
+
+// main component ( entry point of the app) 
 const App = () => {
-  //
-
-  const [counter, setCounter] = useState(0);
-
-  //function to add the number of plus
-  const plus = () => {
-    setCounter(counter + 1);
-  };
-
-  // function to reset the counter
-  const zero = () => {
-    setCounter(0);
-  };
-
-  //function to decrement 
-
-  const minus = () => {
-    setCounter(counter -1)
-  }
-
-  console.log("rendering...", counter);
+  //Variables inside the App component
+  const nimi = "juma";
+  const ika = 20;
 
   return (
     <div>
-      <button onClick={zero}>zero</button>
-      <button onClick={plus}>Plus</button>
-      {counter}
-      <button onClick={minus}>minus</button>
+      <h1>Greetings </h1>
+       {/* Passing fixed name and calculated age */}
+      <Hello name="maya" age={26+10}/>
+      {/* Passing variables as props */}
+      <Hello name= {nimi} age={ika}/>
     </div>
   );
 };
