@@ -169,28 +169,67 @@ This are special functions in react that let function components hook into react
  we can think of a state as a memory of the component its like a box that holds information for a specific component.
 
 
- ### Component state:
+  - Component state:
 
  Is the internal data that that belongs to that specifce component which determines how that component will behave or on what will be displayed.
 
 
- ### Evenet hanlders 
+ -  Evenet hanlders 
 
  This are functions that handle what happens after a user actions 
 
  This are function that are triggered when a specific event happens in your react app when a user clicks a button. 
 
 
- ### helper functions 
+ ## component helper function
 
- This are small reusable function that perfoms a specifice ask to help another piece of code. 
- Think of it as assistant that takes care of a small details.
+* This is a function defined inside another function some logic will be defined inside another function and called when the component is rendered.
+* Some logic are kept in small code or functions.
 
  ### destructuring 
 
-We can assigne the props of an object to the parameter of the child component and using distructruing 
+what is distructuring ? taking values out of arrays or objects and storing them in variables easily. 
 
-distrcutruin helps us extract value in an object or array into other variables in shorter cleaner way 
+- object destructuring
+
+The code below does not use destructuring it uses dot notation to extract the value from the object. 
+```js
+const person = {
+  name: "Juma",
+  age: 20
+};
+
+const name = person.name;
+const age = person.age;
+```
+
+lets see how using destructuring helps in removing values from an object 
+
+```js 
+
+const person = {
+  name: "juma",
+  age: 20
+}
+
+const {name, age} = person; 
+
+```
+
+- Array destructuring
+
+insted of using dot notation we use bracket notation to extract the values in  an array 
+
+```js
+const numbers = [10, 20, 30];
+
+const [first, second, third] = numbers;
+```
+
+
+- auxiliary variables ?
+
+this are extra helper variables used to store temporary values or simplify calculations. 
 
 ### Page re-rendering
 
@@ -275,10 +314,7 @@ UI updates
 
 done 
 
-## component helper function
 
-* This is a function defined inside another function some logic will be defined inside another function and called when the component is rendered.
-*  
 
 # D: A more complex state, debugging React apps
 
