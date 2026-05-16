@@ -502,6 +502,6 @@ So let's place the application's state in the App component and pass it down to 
 
 ### Changes in state cause re-rendering
 
-
+This approach works because the component contains only a single return statement, making it possible to use the concise arrow function syntax.
 
 # D: A more complex state, debugging React apps
