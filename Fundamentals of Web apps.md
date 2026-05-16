@@ -350,6 +350,10 @@ Triggered by:
 
 ### Stateful components ( stoped her)
 
+what is state in react 
+
+
+
 ```js
 const [counter, setCounter] = useState(0)
 ```
