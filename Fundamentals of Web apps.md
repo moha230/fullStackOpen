@@ -468,6 +468,30 @@ The value of the onClick attribute is a variable containing a reference to a fun
 
 ### Passing state to child components
 
+react components must be small and reusable accross the application adn even across projects 
+
+we can have a display componentt , addtion component and reset components. 
+
+""" One best practice in React is to lift the state up in the component hierarchy. The documentation says:
+
+Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor."""
+
+
+lifting a stateup moving the state to a parent component so multiple child components can share it. 
+
+⚛️ Why this is needed
+
+In React:
+
+Each component has its own state
+But sometimes two components need the same data
+
+Instead of duplicating state, you:
+
+👉 put the state in their common parent
+
+So let's place the application's state in the App component and pass it down to the Display component through props:
+
 ```js
 <App>
   <Child count={counter} />
