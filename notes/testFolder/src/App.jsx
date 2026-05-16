@@ -1,18 +1,30 @@
-//importing the userState function from the react library 
-import {useState} from 'react';
+//importing the userState function from the react library
+import { useState } from "react";
 
 // main component ( entry point of the app)
 const App = () => {
-  const [counter, setCounter] = useState(0)
+  const [counter, setCounter] = useState(0);
 
-  
+  //lets register an event handler function to add the counter 
+  const handlClick = () => {
+    setCounter(counter + 1 )
+  };
 
-  setTimeout(()=> setCounter(counter + 1),1000)
-  console.log('rendering...', counter)
+  //lets register an event handler function to reset the counter 
+
+  const resetClick = () => {
+    setCounter(0)
+  }
 
   return (
     <div>
-      {counter}
+      <div>
+        <button onClick={resetClick}>reset</button>
+      </div>
+      <div>{counter}</div>
+      <div>
+        <button onClick={handlClick}>plus</button>
+      </div>
     </div>
   );
 };

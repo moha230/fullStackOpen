@@ -388,6 +388,20 @@ The variable setCounter is assigned a functoin that would be used to modify the 
 
 ### Event handling flow
 
+Event handling = reactin to user actions 
+* clicking 
+* typing 
+* submitting forms 
+* mouse hover 
+
+react does not use real browser event directly its wraps them in something called synthetic Even system . 
+
+Why?
+
+works same in all browsers
+consistent behavior
+better performance
+
 ```text
 Click
 ↓
