@@ -500,4 +500,8 @@ So let's place the application's state in the App component and pass it down to 
 
 ---
 
+### Changes in state cause re-rendering
+
+
+
 # D: A more complex state, debugging React apps
