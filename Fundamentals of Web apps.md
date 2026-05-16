@@ -418,6 +418,54 @@ UI updates
 
 ---
 
+### An event handler is a function
+
+The event handler is a normal function  that react calls when a user interacts with something in the web page. 
+
+real life analogy:
+
+Button = doorbell 
+Event = someone pressing it 
+Event Handler = the "ring sound function"
+An event handler is a function that waits for a user action and runs when that action happens.
+
+when we define event handler function for the buttons we declareed their onClick attributes.
+
+| Part          | Meaning                 |
+| ------------- | ----------------------- |
+| `onClick`     | event handler attribute |
+| `handleClick` | event handler function  |
+
+
+What's going on? An event handler is supposed to be either a function or a function reference, and when we write:
+
+An event handler must be either:
+
+A function reference
+OR an inline function
+
+NOT a function call
+
+when we say function reference 
+<button onClick={handleClick}>
+
+Here:
+
+handleClick is a function reference
+React will call it later
+
+Inline function (ALSO VALID)
+
+<button onClick={() => handleClick()}>
+
+Here:
+
+You pass a function
+React calls it later
+
+
+The value of the onClick attribute is a variable containing a reference to a function:
+
 ### Passing state to child components
 
 ```js

@@ -6,24 +6,24 @@ const App = () => {
   const [counter, setCounter] = useState(0);
 
   //lets register an event handler function to add the counter 
-  const handlClick = () => {
+  const increaseByOne = () => {
     setCounter(counter + 1 )
   };
 
   //lets register an event handler function to reset the counter 
 
-  const resetClick = () => {
+  const setToZero = () => {
     setCounter(0)
   }
 
   return (
     <div>
       <div>
-        <button onClick={resetClick}>reset</button>
+        <button onClick={setToZero}>reset</button>
       </div>
       <div>{counter}</div>
       <div>
-        <button onClick={handlClick}>plus</button>
+        <button onClick={increaseByOne}>plus</button>
       </div>
     </div>
   );
