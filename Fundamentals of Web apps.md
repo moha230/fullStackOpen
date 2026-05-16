@@ -352,14 +352,19 @@ Triggered by:
 
 what is state in react 
 
+Its data that a component remembers and can change over time. 
+when the state changes react rerenders the UI so the screen stays in sync with the data. 
+
+State = A variable reacts tracks that updates the UI when it changes. 
+
 
 
 ```js
 const [counter, setCounter] = useState(0)
 ```
 
-* `counter` current value
-* `setCounter` update function
+* `counter` current value (the state)
+* `setCounter` update function ( function used to change its state)
 
 Equivalent:
 
@@ -371,6 +376,15 @@ const setCounter = state[1]
 ```
 
 ---
+
+The function call adds state to the component(react will create memory for your component) and renders it initialized with the value zero
+
+The function will return an array that contains two items. 
+
+[0, function setCounter() {}]
+
+counter variable is assigned the initial value of state which is zero
+The variable setCounter is assigned a functoin that would be used to modify the state. 
 
 ### Event handling flow
 
