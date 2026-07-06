@@ -505,3 +505,22 @@ So let's place the application's state in the App component and pass it down to 
 This approach works because the component contains only a single return statement, making it possible to use the concise arrow function syntax.
 
 # D: A more complex state, debugging React apps (stopped her)
+
+## complex state 
+
+React allows you to store two independent pieces of state . Updating one state does not affect the other. 
+
+Each state variable has its win setter function.
+
+Note a setter is function that update the state 
+
+const [count, setCount] = useState(0)
+
+| Variable   | Purpose                        |
+| ---------- | ------------------------------ |
+| `count`    | Holds the current state value  |
+| `setCount` | Changes (sets) the state value |
+
+The component's state or a piece of its state can be of any type.
+
+This means the state data can be of any types A number array object etc. 

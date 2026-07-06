@@ -10,31 +10,21 @@ const Button = ({ onClick, text }) => <button onClick={onClick}>{text}</button>;
 
 // main component ( entry point of the app)
 const App = () => {
-  const [counter, setCounter] = useState(0);
+  // we need to create two peaces of state for the application named left and right which both have the value 0
+  const [left, setleft] = useState(0);
+  const [right, setright] = useState(0);
 
-  console.log("rendering with counter value", counter);
+  console.log("rendering with left value", left);
+  console.log("rendering with left value", right);
 
-  const increaseByOne = () => {
-    console.log("increasing, value before", counter);
-    setCounter(counter + 1);
-  };
-
-  const decreaseByOne = () => {
-    console.log("decreasing, value before", counter);
-    setCounter(counter - 1);
-  };
-
-  const setToZero = () => {
-    console.log("resetting to zero, value before", counter);
-    setCounter(0);
-  };
+ 
 
   return (
     <div>
-      <Display counter={counter} />
-      <Button onClick={increaseByOne} text="plus" />
-      <Button onClick={setToZero} text="zero" />
-      <Button onClick={decreaseByOne} text="minus" />
+      {left}
+      <button onClick={() => setleft(left + 1)}>left</button>
+      <button onClick={()=> setright(right+1)} >right</button>
+      {right}
     </div>
   );
 };
