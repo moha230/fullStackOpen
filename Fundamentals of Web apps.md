@@ -523,4 +523,76 @@ const [count, setCount] = useState(0)
 
 The component's state or a piece of its state can be of any type.
 
-This means the state data can be of any types A number array object etc. 
+This means the state data can be of any types a number array or an object etc. 
+
+```js
+<button
+  onClick={() =>
+    setClick({
+      left: click.left + 1,
+      right: click.right
+    })
+  }
+/>
+```
+
+Why do we do this?
+
+Because our state is **an object**:
+
+```js
+const [click, setClick] = useState({
+  left: 0,
+  right: 0
+})
+```
+
+The `setClick()` function **replaces the entire object** with the new one you provide. It does **not** automatically keep the existing properties.
+
+For example, if the current state is:
+
+```js
+{
+  left: 2,
+  right: 5
+}
+```
+
+and we write:
+
+```js
+setClick({
+  left: click.left + 1
+})
+```
+
+React replaces the old object with:
+
+```js
+{
+  left: 3
+}
+```
+
+The `right` property is lost because it wasn't included in the new object.
+
+To keep the `right` value, we must include it when creating the new object:
+
+```js
+setClick({
+  left: click.left + 1,
+  right: click.right
+})
+```
+
+The new state becomes:
+
+```js
+{
+  left: 3,
+  right: 5
+}
+```
+
+Only the `left` value changes, while `right` stays the same.
+```
