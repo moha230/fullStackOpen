@@ -596,3 +596,21 @@ The new state becomes:
 
 Only the `left` value changes, while `right` stays the same.
 ```
+
+-spread object 
+
+Using the spread object syntax to make the state object look neat.
+
+Object Spread Operator (...)
+What is it?
+
+The object spread operator (...) copies the properties from one object into a new object.
+
+What does it do?
+Copies all properties from an existing object.
+Creates a new object (it does not modify the original object).
+Lets you add new properties.
+Lets you update existing properties.
+Makes it easy to keep the existing data while changing only one or two values.
+
+The order matters. The object spread operator should come first, then the properties you want to update. This copies all the existing properties into a new object, and any properties written after the spread operator overwrite the copied values.

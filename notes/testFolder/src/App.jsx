@@ -11,31 +11,32 @@ const Button = ({ onClick, text }) => <button onClick={onClick}>{text}</button>;
 // main component ( entry point of the app)
 const App = () => {
   // lets change the state and store them in single object for both left and right clicks
-  const [click, setClick] = useState({
+  const [clicks, setClicks] = useState({
     left: 0,
     right: 0,
   });
 
   //printing in the console
-  console.log("rendering current left value", click.left);
-  console.log("rendering current right value", click.right);
+  console.log("rendering current left value", clicks.left);
+  console.log("rendering current right value", clicks.right);
 
   // we could write them in seprate functions but no need since i get it 
+  // lets use the spread operator 
 
   return (
     <div>
-      {click.left}
+      {clicks.left}
       <button
-        onClick={() => setClick({ left: click.left + 1, right: click.right })}
+        onClick={() => setClicks({...clicks, left: clicks.left + 1})}
       >
         left
       </button>
       <button
-        onClick={() => setClick({ right: click.right + 1, left: click.left })}
+        onClick={() => setClicks({ ...clicks,right: clicks.right + 1})}
       >
         right
       </button>
-      {click.right}
+      {clicks.right}
     </div>
   );
 };
