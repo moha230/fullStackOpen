@@ -595,7 +595,7 @@ The new state becomes:
 ```
 
 Only the `left` value changes, while `right` stays the same.
-```
+
 
 -spread object 
 
@@ -614,3 +614,22 @@ Lets you update existing properties.
 Makes it easy to keep the existing data while changing only one or two values.
 
 The order matters. The object spread operator should come first, then the properties you want to update. This copies all the existing properties into a new object, and any properties written after the spread operator overwrite the copied values.
+
+
+## Handling arrays 
+
+why arrays are used in states.In order to store the amount of clicks in he left side or the right side 
+
+
+```js
+setAll(allClicks.concat("R"));
+
+setAll is the state setter function its work is to pdate the allckicks state 
+
+allClicks.concat("R") this is called the method call 
+
+concat() is a built-in array method in js 
+
+```
+
+will add the arrays in the web page using a p tag 
