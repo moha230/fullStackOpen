@@ -18,12 +18,14 @@ const App = () => {
   });
   // Lets add a state that containing an array that remembers every click that occured.
   const [allClicks, setAll] = useState([]);
+  //lets add a state that keeps the total number of buttons pressed in a state
+  const [total, setTotal] = useState(0);
 
   //printing in the console
   console.log("rendering current left value", clicks.left);
   console.log("rendering current right value", clicks.right);
   console.log("rendering current allClicks values", allClicks);
-
+  console.log("rendering current total values", total);
   // we could write them in seprate functions but no need since i get it
   // lets use the spread operator
 
@@ -32,12 +34,14 @@ const App = () => {
       {clicks.left}
       <button
         onClick={() => {
+          setAll(allClicks.concat("L"));
           setClicks({
             ...clicks,
             left: clicks.left + 1,
           });
 
-          setAll(allClicks.concat("L"));
+          
+          setTotal(clicks.left + 1 + clicks.right);
         }}
       >
         left
@@ -47,12 +51,14 @@ const App = () => {
           setClicks({ ...clicks, right: clicks.right + 1 });
 
           setAll(allClicks.concat("R"));
+          setTotal(clicks.left + clicks.right + 1 );
         }}
       >
         right
       </button>
       {clicks.right}
-      <p>{allClicks.join(' ')}</p>
+      <p>{allClicks.join(" ")}</p>
+      <p>total {total}</p>
     </div>
   );
 };
