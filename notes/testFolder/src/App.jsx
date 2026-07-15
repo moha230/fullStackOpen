@@ -10,10 +10,18 @@ const History = (props) => {
   return <div>button press history : {props.allClicks.join(" ")}</div>;
 };
 
+// lets create a button component
+const Button = ({ onClick, text }) => {
+  return (
+    
+      <button onClick={onClick}>{text}</button>
+    
+  );
+};
+
 // main component ( entry point of the app)
 const App = () => {
   // lets change the state and store them in single object for both left and right clicks
-
   const [clicks, setClicks] = useState({
     left: 0,
     right: 0,
@@ -34,7 +42,7 @@ const App = () => {
   return (
     <div>
       {clicks.left}
-      <button
+      <Button
         onClick={() => {
           setAll(allClicks.concat("L"));
           setClicks({
@@ -43,20 +51,17 @@ const App = () => {
           });
 
           setTotal(clicks.left + 1 + clicks.right);
-        }}
-      >
-        left
-      </button>
-      <button
+        }} text={'left'}
+      />
+      <Button
         onClick={() => {
           setClicks({ ...clicks, right: clicks.right + 1 });
 
           setAll(allClicks.concat("R"));
           setTotal(clicks.left + clicks.right + 1);
-        }}
-      >
-        right
-      </button>
+        }} text={'right'}
+      />
+      
       {clicks.right}
 
       <p>total {total}</p>
